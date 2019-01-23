@@ -1,5 +1,6 @@
 # [Pinba Engine](http://pinba.org) Docker Image
-
+From Pinba site:
+> Pinba is a MySQL storage engine that acts as a realtime monitoring/statistics server for PHP using MySQL as a read-only interface.
 
 ## Description
 
@@ -10,3 +11,13 @@
 - [Judy v.1.0.5](http://downloads.sourceforge.net/project/judy/judy/Judy-${JUDY_VERSION}/Judy-1.0.5.tar.gz)
 
 First "dry run" of MariaDB need to create DBs, setup environment and install `libpinba_engine.so` plugin.
+
+## [Official Docker Image](https://github.com/tony2001/pinba_engine/wiki/Docker)
+Pull image from Docker Hub:
+```
+docker pull tony2001/pinba
+```
+Run:
+```
+docker run -d --net=host --name=pinba tony2001/pinba
+```
