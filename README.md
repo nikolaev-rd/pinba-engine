@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/nikolaev-rd/pinba-engine.svg?branch=master)](https://travis-ci.com/nikolaev-rd/pinba-engine)
 # [Pinba Engine](http://pinba.org) Docker Image
 From Pinba site:
 > Pinba is a MySQL storage engine that acts as a realtime monitoring/statistics server for PHP using MySQL as a read-only interface.
