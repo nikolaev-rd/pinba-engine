@@ -5,10 +5,9 @@ env:
   global:
   - COMMIT=${TRAVIS_COMMIT::8}
   - REPO=nikolaev-rd/pinba-engine
-  - TAG=$(if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master" ]]; then echo "latest"; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
 
 script:
- - export TAG=$(if [[ $TRAVIS_PULL_REQUEST == "false" ]] && [[ $TRAVIS_BRANCH == "master" ]]; then echo "latest"; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+ - export TAG=latest
  - export REPO=nikolaev-rd/pinba-engine
  - docker build -t $REPO:$TAG -f Dockerfile .
 
