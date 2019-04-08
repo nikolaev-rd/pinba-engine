@@ -1,0 +1,15 @@
+language: bash
+services: docker
+
+env:
+  global:
+  - COMMIT=${TRAVIS_COMMIT::8}
+  - REPO=nikolaev-rd/pinba-engine
+
+script:
+ - export TAG=latest
+ - export REPO=nikolaev-rd/pinba-engine
+ - docker build -t $REPO:$TAG -f Dockerfile .
+
+after_script:
+  - docker images
