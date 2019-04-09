@@ -7,12 +7,10 @@ platform:
 
 env:
   global:
-  - COMMIT=${TRAVIS_COMMIT::8}
-  - REPO=nikolaev-rd/pinba-engine
+  - REPO=$TRAVIS_REPO_SLUG
+  - TAG=$([ "$TRAVIS_BRANCH" = "master" ] && echo "$TRAVIS_JOB_NUMBER" || echo "${TRAVIS_COMMIT::8}")
 
 script:
-  - export TAG=$([ ! -z "$TRAVIS_COMMIT" ] && echo "$TRAVIS_COMMIT" || echo "latest")
-  - export REPO=nikolaev-rd/pinba-engine
   - docker build -t $REPO:$TAG -f Dockerfile .
 
 after_script:
