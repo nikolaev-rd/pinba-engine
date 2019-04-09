@@ -8,7 +8,7 @@ platform:
 env:
   global:
   - REPO=$TRAVIS_REPO_SLUG
-  - TAG=$([ "$TRAVIS_BRANCH" = "master" ] && echo "$TRAVIS_JOB_NUMBER" || echo "${TRAVIS_COMMIT::8}")
+  - TAG=$([ "$TRAVIS_BRANCH" = "master" ] && echo "latest" || echo "${TRAVIS_COMMIT::8}-${TRAVIS_JOB_NUMBER}")
 
 script:
   - docker build -t $REPO:$TAG -f Dockerfile .
