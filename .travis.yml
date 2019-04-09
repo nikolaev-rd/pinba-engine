@@ -11,7 +11,7 @@ env:
   - REPO=nikolaev-rd/pinba-engine
 
 script:
-  - export TAG=latest
+  - export TAG=$([ ! -z "$TRAVIS_COMMIT" ] && echo "$TRAVIS_COMMIT" || echo "latest")
   - export REPO=nikolaev-rd/pinba-engine
   - docker build -t $REPO:$TAG -f Dockerfile .
 
