@@ -1,10 +1,6 @@
 language: bash
 services: docker
 
-platform:
-  - x64
-  - x86
-
 env:
   global:
   - REPO=$TRAVIS_REPO_SLUG
