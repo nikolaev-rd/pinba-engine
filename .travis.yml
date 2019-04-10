@@ -1,6 +1,11 @@
 language: bash
 services: docker
 
+addons:
+  apt:
+    packages:
+      - mariadb-client
+
 env:
   global:
   - COMMIT=${TRAVIS_COMMIT::8}
