@@ -18,3 +18,4 @@ script:
 
 after_script:
   - docker images
+  - docker run --rm $REPO:$TAG --name pinba --restart=on-failure:3
